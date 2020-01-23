@@ -14,4 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/consultores', 'Consultores@getConsultores')->name('consultores');
+
+Route::get('/modelo', function () {
+    return view('modelo');
+});

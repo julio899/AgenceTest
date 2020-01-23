@@ -81,7 +81,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Agence Test
+                    Test Laravel in 
+                    <img src="{{ asset('img/logo.gif') }}" alt="logo">
                 </div>
 
                 <div class="links">
