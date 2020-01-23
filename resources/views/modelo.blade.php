@@ -225,6 +225,27 @@
             </div>
           </div>
           <div class="row">
+           
+            <div class="col-lg-6 col-md-12">
+              <div class="card">
+                <div class="card-header card-header-warning">
+                  <h4 class="card-title">Cuentas de Consultores</h4>
+                  <p class="card-category">New employees on 15th September, 2016</p>
+                </div>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-warning">
+                      <th>#</th>
+                      <th>Nombre</th>
+                      <th>Salario</th>
+                      <th>Usuario</th>
+                    </thead>
+                    <tbody id="body-table-consultores">                   
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-tabs card-header-primary">
@@ -470,26 +491,6 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <h4 class="card-title">Cuentas de Consultores</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
-                </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-warning">
-                      <th>#</th>
-                      <th>Nombre</th>
-                      <th>Salario</th>
-                      <th>Usuario</th>
-                    </thead>
-                    <tbody id="body-table-consultores">                   
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -637,6 +638,14 @@
   <script src="{{ asset('/js/material-dashboard.js?v=2.1.1') }}" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="{{ asset('/js/demo.js') }}"></script>
+  <style>
+    .radioEstilo
+    {
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+  </style>
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -832,7 +841,15 @@
                     var td3 = document.createElement('td');
                         td3.innerText = 'R$ ' + consultor.brut_salario;
                     var td4 = document.createElement('td');
-                        td4.innerText = consultor.co_usuario;
+                        td4.innerHTML = `
+                              <div class="form-check radioEstilo">
+                                <label class="form-radio-label">
+                                  <input name="consultorCheck" class="form-radio-input" type="radio" value="">
+                                  <span class="form-radio-sign">
+                                    <span class="check"></span>
+                                  </span>
+                                </label>
+                              </div>`+consultor.co_usuario;
                    
                     tr.append(td);
                     tr.append(td2);
