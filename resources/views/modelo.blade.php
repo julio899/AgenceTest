@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title> 
+
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
   <link href="{{ asset('/css/material-dashboard.css?v=2.1.1') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -52,7 +56,7 @@
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">Opciones</i>
+                  <i class="material-icons">face</i>
                   <p class="d-lg-none d-md-block">
                     Account
                   </p>
@@ -78,7 +82,7 @@
                     <i class="material-icons">store</i>
                   </div>
                   <p class="card-category">Acumulado</p>
-                  <h3 class="card-title">R$34,245</h3>
+                  <h3 class="card-title">R$0,00</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -92,7 +96,7 @@
                   <div class="ct-chart" id="dailySalesChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Daily Sales</h4>
+                  <h4 class="card-title">Ventas</h4>
                 </div>
               </div>
 
@@ -604,7 +608,7 @@
   </script>
   <script>
     $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
+      // Javascript method's body can be found in public/js/inicio.js
       md.initDashboardPageCharts();
 
     });
