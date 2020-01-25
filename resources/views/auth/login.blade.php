@@ -70,4 +70,9 @@
         </div>
     </div>
 </div>
+<script>
+window.onload = function() {
+    loaderOff();
+};
+</script>
 @endsection
