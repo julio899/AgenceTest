@@ -107,25 +107,6 @@
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
-                  </div>
-                  <p class="card-category">Used Space</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
-                  </h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="#pablo">Get More Space...</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
                     <i class="material-icons">store</i>
@@ -139,42 +120,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
-                  </div>
-                  <p class="card-category">Fixed Issues</p>
-                  <h3 class="card-title">75</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
-                  <div class="card-icon">
-                    <i class="fa fa-twitter"></i>
-                  </div>
-                  <p class="card-category">Followers</p>
-                  <h3 class="card-title">+245</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">update</i> Just Updated
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
+
               <div class="card card-chart">
                 <div class="card-header card-header-success">
                   <div class="ct-chart" id="dailySalesChart"></div>
@@ -190,6 +136,33 @@
                   </div>
                 </div>
               </div>
+
+            </div>
+            <div class="col-lg-9 col-md-6 col-sm-6">
+              
+            <div class="card">
+                <div class="card-header card-header-warning">
+                  <h4 class="card-title">Cuentas de Consultores</h4>
+                  <p class="card-category">New employees on 15th September, 2016</p>
+                </div>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-warning">
+                      <th>#</th>
+                      <th>Nombre</th>
+                      <th>Salario</th>
+                      <th>Usuario</th>
+                    </thead>
+                    <tbody id="body-table-consultores">                   
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
             </div>
             <div class="col-md-4">
               <div class="card card-chart">
@@ -225,33 +198,12 @@
             </div>
           </div>
           <div class="row">
-           
-            <div class="col-lg-6 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <h4 class="card-title">Cuentas de Consultores</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
-                </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-warning">
-                      <th>#</th>
-                      <th>Nombre</th>
-                      <th>Salario</th>
-                      <th>Usuario</th>
-                    </thead>
-                    <tbody id="body-table-consultores">                   
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-12 col-md-12">
               <div class="card">
                 <div class="card-header card-header-tabs card-header-primary">
                   <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
-                      <span class="nav-tabs-title">Tasks:</span>
+                      <span class="nav-tabs-title">Resultados:</span>
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
                           <a class="nav-link active" href="#profile" data-toggle="tab">
@@ -537,7 +489,7 @@
         <i class="fa fa-cog fa-2x"> </i>
       </a>
       <ul class="dropdown-menu">
-        <li class="header-title"> Sidebar Filters</li>
+        <li class="header-title"> Barra Lateral</li>
         <li class="adjustments-line">
           <a href="javascript:void(0)" class="switch-trigger active-color">
             <div class="badge-colors ml-auto mr-auto">
@@ -551,7 +503,7 @@
             <div class="clearfix"></div>
           </a>
         </li>
-        <li class="header-title">Images</li>
+        <li class="header-title">Images Fondo Lateral</li>
         <li class="active">
           <a class="img-holder switch-trigger" href="javascript:void(0)">
             <img src="{{ asset('/img/sidebar-1.jpg') }}" alt="">
@@ -571,30 +523,6 @@
           <a class="img-holder switch-trigger" href="javascript:void(0)">
             <img src="{{ asset('/img/sidebar-4.jpg') }}" alt="">
           </a>
-        </li>
-        <li class="button-container">
-          <a href="https://www.creative-tim.com/product/material-dashboard" target="_blank" class="btn btn-primary btn-block">Free Download</a>
-        </li>
-        <!-- <li class="header-title">Want more components?</li>
-            <li class="button-container">
-                <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
-                  Get the pro version
-                </a>
-            </li> -->
-        <li class="button-container">
-          <a href="https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
-            View Documentation
-          </a>
-        </li>
-        <li class="button-container github-star">
-          <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
-        </li>
-        <li class="header-title">Thank you for 95 shares!</li>
-        <li class="button-container text-center">
-          <button id="twitter" class="btn btn-round btn-twitter"><i class="fa fa-twitter"></i> &middot; 45</button>
-          <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot; 50</button>
-          <br>
-          <br>
         </li>
       </ul>
     </div>
@@ -644,6 +572,9 @@
         display: inline-block;
         margin-left: 5px;
         margin-right: 5px;
+    }
+    .fondoGris{
+      background-color: gainsboro;
     }
   </style>
   <script>
@@ -844,7 +775,7 @@
                         td4.innerHTML = `
                               <div class="form-check radioEstilo">
                                 <label class="form-radio-label">
-                                  <input name="consultorCheck" class="form-radio-input" type="radio" value="">
+                                  <input name="consultorCheck" data-user="${consultor.co_usuario}" class="form-radio-input consultorCheck" type="radio" value="">
                                   <span class="form-radio-sign">
                                     <span class="check"></span>
                                   </span>
@@ -857,10 +788,38 @@
                     tr.append(td4);
                     tablaConsultores.append(tr);
                 });
-                //append
+
+                  var consultores = document.getElementsByClassName('consultorCheck');
+                  if(consultores.length > 0)
+                  {
+                    for (let index = 0; index < consultores.length; index++) {
+                      let consultorUser = consultores[index].getAttribute('data-user');
+                      let consultorCheck = consultores[index];
+                          consultorCheck.addEventListener('change',checkActivador);
+                    }
+                  }
+                  
             });
     })();
     
+    function checkActivador(e)
+    {
+      limpiarFondo();
+      var tr = e.target.parentElement.parentElement.parentElement.parentElement;
+          tr.classList.add('fondoGris');
+      console.log('Usuario: ',e.target.dataset.user);
+    }
+    function limpiarFondo()
+    { 
+      var elementosConFondo = document.getElementsByClassName('fondoGris');
+      if ( elementosConFondo )
+      {
+        for (let index = 0; index < elementosConFondo.length; index++) 
+        {
+          elementosConFondo[index].classList.remove('fondoGris');
+        }
+      }
+    }
   </script>
 </body>
 
