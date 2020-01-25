@@ -49,52 +49,18 @@
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-            <form class="navbar-form">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-              </div>
-            </form>
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">person</i>
+                  <i class="material-icons">Opciones</i>
                   <p class="d-lg-none d-md-block">
                     Account
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="#">Perfil</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log out</a>
+                  <a class="dropdown-item" href="#">Salir</a>
                 </div>
               </li>
             </ul>
@@ -111,12 +77,12 @@
                   <div class="card-icon">
                     <i class="material-icons">store</i>
                   </div>
-                  <p class="card-category">Revenue</p>
-                  <h3 class="card-title">$34,245</h3>
+                  <p class="card-category">Acumulado</p>
+                  <h3 class="card-title">R$34,245</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
+                    ult&iacute;ma selecci&oacute;n
                   </div>
                 </div>
               </div>
@@ -127,13 +93,6 @@
                 </div>
                 <div class="card-body">
                   <h4 class="card-title">Daily Sales</h4>
-                  <p class="card-category">
-                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 4 minutes ago
-                  </div>
                 </div>
               </div>
 
@@ -161,7 +120,7 @@
 
             </div>
           </div>
-          <div class="row">
+          <div class="row" style="display:none">
             <div class="col-md-4">
             </div>
             <div class="col-md-4">
@@ -197,6 +156,8 @@
               </div>
             </div>
           </div>
+          
+          <!-- -->
           <div class="row">
             <div class="col-lg-12 col-md-12">
               <div class="card">
@@ -206,20 +167,8 @@
                       <span class="nav-tabs-title">Resultados:</span>
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
-                          <a class="nav-link active" href="#profile" data-toggle="tab">
-                            <i class="material-icons">bug_report</i> Bugs
-                            <div class="ripple-container"></div>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#messages" data-toggle="tab">
-                            <i class="material-icons">code</i> Website
-                            <div class="ripple-container"></div>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#settings" data-toggle="tab">
-                            <i class="material-icons">cloud</i> Server
+                          <a class="nav-link active" href="#infoDataConsultor" data-toggle="tab">
+                             Reporte de Facturas Relacionadas a <strong id="consultorLabel"></strong>
                             <div class="ripple-container"></div>
                           </a>
                         </li>
@@ -229,8 +178,8 @@
                 </div>
                 <div class="card-body">
                   <div class="tab-content">
-                    <div class="tab-pane active" id="profile">
-                      <table class="table">
+                    <div class="tab-pane active" id="infoDataConsultor">
+                      <table id="tableDataConsultor" class="table">
                         <tbody>
                           <tr>
                             <td>
@@ -308,125 +257,6 @@
                               </div>
                             </td>
                             <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="tab-pane" id="messages">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="tab-pane" id="settings">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
                             <td class="td-actions text-right">
                               <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
@@ -564,8 +394,8 @@
   <script src="{{ asset('/js/plugins/bootstrap-notify.js') }}"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('/js/material-dashboard.js?v=2.1.1') }}" type="text/javascript"></script>
-  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ asset('/js/demo.js') }}"></script>
+  <!-- Material Dashboard inicio methods -->
+  <script src="{{ asset('/js/inicio.js') }}"></script>
   <style>
     .radioEstilo
     {
@@ -576,6 +406,114 @@
     .fondoGris{
       background-color: gainsboro;
     }
+
+    .ocultar{
+      display:none;
+    }
+
+    #loader{
+      text-align: center;
+      background-color: rgba(0,0,0,0.5);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2500;
+    }
+    #loader>div{
+      margin: 47vh auto;
+    }
+  
+  .toRight{
+      text-align: right;
+  }
+    /* Efectos Loader sppinner */
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
   </style>
   <script>
     $(document).ready(function() {
@@ -798,17 +736,74 @@
                           consultorCheck.addEventListener('change',checkActivador);
                     }
                   }
+                  loaderOff();
                   
             });
     })();
     
-    function checkActivador(e)
+    async function checkActivador(e)
     {
+      loaderRun();
       limpiarFondo();
       var tr = e.target.parentElement.parentElement.parentElement.parentElement;
           tr.classList.add('fondoGris');
       console.log('Usuario: ',e.target.dataset.user);
+      return busquedaDataConsultor(e.target.dataset.user);
     }
+
+    function busquedaDataConsultor( userConsultor )
+    {
+        const url_api_consultores_ganancias = "{{ url('/api/consultores/') }}/"+userConsultor+'/ganancia';
+        const tablaResultadoParaConsultor = document.getElementById("tableDataConsultor");
+
+      fetch(url_api_consultores_ganancias)
+            .then((r) => { return r.json(); })
+            .then( (dataRespuesta) => {
+              console.log(dataRespuesta);
+              document.getElementById('consultorLabel').innerHTML = userConsultor;
+              tablaResultadoParaConsultor.innerHTML = '';
+              // Titulo
+              var trTitulos = document.createElement('tr');
+              var th1  = document.createElement('th');
+                  th1.innerText = 'Descripcion';
+              var th2  = document.createElement('th');
+                  th2.innerText = 'Total';
+                  th2.classList.add('toRight');
+              var th3  = document.createElement('th');
+                  th3.innerText = 'Imp';
+              var th4  = document.createElement('th');
+                  th4.innerText = 'Fecha';
+
+              trTitulos.append(th1);
+              trTitulos.append(th2);
+              trTitulos.append(th3);
+              trTitulos.append(th4);
+              tablaResultadoParaConsultor.append(trTitulos);
+              
+              dataRespuesta.forEach((registro) => {
+                  var tr = document.createElement('tr');
+                  var td  = document.createElement('td');
+                  var tdTotalImp  = document.createElement('td');
+                  var tdTotal  = document.createElement('td');
+                  var tdFecha  = document.createElement('td');
+                      td.innerText = registro.ds_os+' '+registro.ds_caracteristica;
+                      tdFecha.innerText = registro.dt_inicio;
+                      tdTotalImp.innerText = registro.total_imp_inc+'%';
+                      tdTotalImp.classList.add('toRight');
+                      tdTotal.innerText = Number(registro.total).toFixed(2);
+                      tdTotal.classList.add('toRight');
+                      tr.append(td);
+                      tr.append(tdTotal);
+                      tr.append(tdTotalImp);
+                      tr.append(tdFecha);
+                  tablaResultadoParaConsultor.append(tr);
+              });
+              
+              loaderOff();
+            });
+
+    }
+
     function limpiarFondo()
     { 
       var elementosConFondo = document.getElementsByClassName('fondoGris');
@@ -820,7 +815,19 @@
         }
       }
     }
+    function loaderOff()
+    {
+      document.getElementById('loader').classList.add('ocultar');
+    }
+    function loaderRun()
+    {
+      document.getElementById('loader').classList.remove('ocultar');
+    }
+
   </script>
+  <div id="loader">
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
 </body>
 
 </html>

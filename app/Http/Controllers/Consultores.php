@@ -30,17 +30,18 @@ class Consultores extends Controller
                             ->get();
         return $cao_usuarios;
     }
-    public function getGanancias()
+
+    public function getGanancias($userConsultor)
     {
-        /*
-            SELECT os.co_sistema,os.co_usuario,os.ds_os,os.ds_caracteristica,fac.co_cliente,fac.valor,fac.total_imp_inc,fac.total
+        # Nota Importante en el PDF dice -> en una determinada fecha (DATA_EMISSAO).
+        // PERO DATA_EMISSAO en las tablas que me pasaron NO EXISTE
+        $facturasGananciasNetas = DB::select(
+        "SELECT os.dt_inicio,os.dt_fim,os.dt_sol,os.dt_imp,os.co_sistema,os.co_usuario,os.ds_os,os.ds_caracteristica,fac.co_cliente,fac.comissao_cn,fac.valor,fac.total_imp_inc,fac.total
             FROM `cao_os`as os ,cao_fatura as fac 
-            WHERE os.co_usuario LIKE 'carlos.arruda'
-            AND fac.co_os LIKE os.co_os      
-            
-            -- SALARIO [BRUT_SALARIO]
-            SELECT * from cao_salario WHERE co_usuario = 'carlos.arruda' 
-        
-        */
+            WHERE os.co_usuario LIKE '$userConsultor'
+            AND fac.co_os LIKE os.co_os
+            ORDER BY `os`.`dt_inicio` DESC"
+        );
+        return $facturasGananciasNetas;
     }
 }

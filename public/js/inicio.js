@@ -1,6 +1,7 @@
 demo = {
   initDocumentationCharts: function() {
-    if ($('#dailySalesChart').length != 0 && $('#websiteViewsChart').length != 0) {
+    //&& $('#websiteViewsChart').length != 0
+    if ($('#dailySalesChart').length != 0 ) {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       dataDailySalesChart = {
@@ -26,13 +27,13 @@ demo = {
 
       var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
 
-      var animationHeaderChart = new Chartist.Line('#websiteViewsChart', dataDailySalesChart, optionsDailySalesChart);
+      // var animationHeaderChart = new Chartist.Line('#websiteViewsChart', dataDailySalesChart, optionsDailySalesChart);
     }
   },
 
   initDashboardPageCharts: function() {
-
-    if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0) {
+    //|| $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0
+    if ($('#dailySalesChart').length != 0 ) {
       /* ----------==========     Daily Sales Chart initialization    ==========---------- */
 
       dataDailySalesChart = {
@@ -62,8 +63,8 @@ demo = {
 
 
 
-      /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
-
+      /* ----------==========     Completed Tasks Chart initialization    ==========---------- 
+      
       dataCompletedTasksChart = {
         labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
         series: [
@@ -84,15 +85,16 @@ demo = {
           left: 0
         }
       }
-
+      
       var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
-
+      
       // start animation for the Completed Tasks Chart - Line Chart
       md.startAnimationForLineChart(completedTasksChart);
+    */
 
 
-      /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
-
+      /* ----------==========     Emails Subscription Chart initialization    ==========----------
+      
       var dataWebsiteViewsChart = {
         labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
         series: [
@@ -124,9 +126,10 @@ demo = {
         }]
       ];
       var websiteViewsChart = Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
-
+      
       //start animation for the Emails Subscription Chart
       md.startAnimationForBarChart(websiteViewsChart);
+    */
     }
   },
 
