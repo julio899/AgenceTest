@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,3 +24,9 @@ Route::get('/modelo', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout', function(){
+    Auth::logout();
+    return redirect()->intended('/');
+})->name('logout');
+ 

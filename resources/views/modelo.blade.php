@@ -64,7 +64,7 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                   <a class="dropdown-item" href="#">Perfil</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Salir</a>
+                  <a class="dropdown-item" href="/logout">Salir</a>
                 </div>
               </li>
             </ul>
