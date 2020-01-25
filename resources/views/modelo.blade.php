@@ -227,7 +227,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.github.com/julio899" target="_blank">Julio Vinachi</a> for a better web.
+            <a href="https://julio899.github.io/perfil" target="_blank">Julio Vinachi</a> for a better web.
           </div>
         </div>
       </footer>
