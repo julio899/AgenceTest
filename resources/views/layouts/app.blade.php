@@ -336,6 +336,7 @@
                   th2.innerText = 'Total';
                   th2.classList.add('toRight');
               var th3  = document.createElement('th');
+                  th3.classList.add('toRight');
                   th3.innerText = 'Imp';
               var th4  = document.createElement('th');
                   th4.innerText = 'Fecha';
