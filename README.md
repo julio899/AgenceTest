@@ -10,7 +10,12 @@ Requerimientos Base de Datos archivo `SQL Base`
 > composer install
 
 #### Creacion de Estructuras para el Login
-> php artisan migrate:fresh && php artisan db:seed
+> php artisan migrate:fresh --seed
+        - Otra forma para correr sin confirmar
+        `heroku run /app/php/bin/php /app/www/artisan migrate:fresh --seed`
+
+#### Actualizando contenedor
+> heroku run "php artisan migrate:fresh --seed"
 
 ![peview0](https://raw.githubusercontent.com/julio899/AgenceTest/master/public/img/preview0.png)
 
