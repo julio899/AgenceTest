@@ -153,14 +153,16 @@
                 <div class="card-header card-header-tabs card-header-primary">
                   <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
-                      <span class="nav-tabs-title">Resultados:</span>
+                      <span class="nav-tabs-title lbl-resultados">Resultados:</span>
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
                           <a class="nav-link active" href="#infoDataConsultor" data-toggle="tab">
                              Reporte de Facturas Relacionadas a <strong id="consultorLabel"></strong>
                             <div class="ripple-container"></div>
                           </a>
+                              <li>
                         </li>
+
                           <span class="nav-tabs-title lbl-select">A&ntilde;o</span>
                           <select class="selector" name="year" id="year">
                             <option value="">Todos</option>
@@ -168,7 +170,6 @@
                               <option value="{{ $x }}">{{ $x }}</option>
                             @endfor
                           </select>
-                        <li>
                         </li>
                           <span class="nav-tabs-title lbl-select">Mes</span>
                           <select class="selector" name="month" id="month">
@@ -182,6 +183,8 @@
                             @endfor
                           </select>
                         <li>
+
+                          <span id="lblNameConsultor" class="nav-tabs-title"></span>
                         </li>
                       </ul>
                     </div>

@@ -262,7 +262,7 @@
                         td4.innerHTML = `
                               <div class="form-check radioEstilo">
                                 <label class="form-radio-label">
-                                  <input name="consultorCheck" data-user="${consultor.co_usuario}" class="form-radio-input consultorCheck" type="radio" value="">
+                                  <input name="consultorCheck" data-user="${consultor.co_usuario}" data-name="${consultor.no_usuario}" class="form-radio-input consultorCheck" type="radio" value="">
                                   <span class="form-radio-sign">
                                     <span class="check"></span>
                                   </span>
@@ -290,6 +290,8 @@
             });
     })();
     
+    var __current_consultor = null;
+    var __current_consultor_name = null;
     async function checkActivador(e)
     {
       loaderRun();
@@ -297,6 +299,9 @@
       var tr = e.target.parentElement.parentElement.parentElement.parentElement;
           tr.classList.add('fondoGris');
       console.log('Usuario: ',e.target.dataset.user);
+      __current_consultor = e.target.dataset.user;
+      __current_consultor_name = e.target.dataset.name;
+      document.getElementById('lblNameConsultor').innerText = __current_consultor_name;
       return busquedaDataConsultor(e.target.dataset.user);
     }
 

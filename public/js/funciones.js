@@ -25,3 +25,22 @@ function loaderRun()
         document.getElementById('loader').classList.remove('ocultar');
     }
 }
+
+function selectorCambio(e)
+{
+    if(__current_consultor)
+    {
+        loaderRun();
+        return busquedaDataConsultor(__current_consultor);
+    }else{
+        return swal('Lo Sentimos','Pero Debes seleccionar una cuenta de consultor previamente','error')
+    }
+}
+//Registro de Listener a selectores
+const anio = document.getElementById('year');
+const mes = document.getElementById('month');
+
+if(  anio && mes) {
+    anio.addEventListener('change',selectorCambio);
+    mes.addEventListener('change',selectorCambio);
+}
