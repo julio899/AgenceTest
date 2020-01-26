@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
   <link href="{{ asset('/css/material-dashboard.css?v=2.1.1') }}" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ asset('/css/demo.css') }}" rel="stylesheet" />
+  <!-- CSS personalizado -->
+  <link href="{{ asset('/css/personalizado.css') }}" rel="stylesheet" />
 
 </head>
 <body>
@@ -62,122 +62,6 @@
   <!-- Material Dashboard inicio methods -->
   <script src="{{ asset('/js/inicio.js') }}"></script>
   <style>
-    .radioEstilo
-    {
-        display: inline-block;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    .fondoGris{
-      background-color: gainsboro;
-    }
-
-    .ocultar{
-      display:none;
-    }
-
-    #loader{
-      text-align: center;
-      background-color: rgba(0,0,0,0.5);
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 2500;
-    }
-    #loader>div{
-      margin: 47vh auto;
-    }
-  
-  .toRight{
-      text-align: right;
-  }
-    /* Efectos Loader sppinner */
-.lds-roller {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.lds-roller div {
-  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  transform-origin: 40px 40px;
-}
-.lds-roller div:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #fff;
-  margin: -4px 0 0 -4px;
-}
-.lds-roller div:nth-child(1) {
-  animation-delay: -0.036s;
-}
-.lds-roller div:nth-child(1):after {
-  top: 63px;
-  left: 63px;
-}
-.lds-roller div:nth-child(2) {
-  animation-delay: -0.072s;
-}
-.lds-roller div:nth-child(2):after {
-  top: 68px;
-  left: 56px;
-}
-.lds-roller div:nth-child(3) {
-  animation-delay: -0.108s;
-}
-.lds-roller div:nth-child(3):after {
-  top: 71px;
-  left: 48px;
-}
-.lds-roller div:nth-child(4) {
-  animation-delay: -0.144s;
-}
-.lds-roller div:nth-child(4):after {
-  top: 72px;
-  left: 40px;
-}
-.lds-roller div:nth-child(5) {
-  animation-delay: -0.18s;
-}
-.lds-roller div:nth-child(5):after {
-  top: 71px;
-  left: 32px;
-}
-.lds-roller div:nth-child(6) {
-  animation-delay: -0.216s;
-}
-.lds-roller div:nth-child(6):after {
-  top: 68px;
-  left: 24px;
-}
-.lds-roller div:nth-child(7) {
-  animation-delay: -0.252s;
-}
-.lds-roller div:nth-child(7):after {
-  top: 63px;
-  left: 17px;
-}
-.lds-roller div:nth-child(8) {
-  animation-delay: -0.288s;
-}
-.lds-roller div:nth-child(8):after {
-  top: 56px;
-  left: 12px;
-}
-@keyframes lds-roller {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
   </style>
   <script>
@@ -431,6 +315,9 @@
               var trTitulos = document.createElement('tr');
               var th1  = document.createElement('th');
                   th1.innerText = 'Descripcion';
+              var thValor  = document.createElement('th');
+                  thValor.innerText = 'Valor';
+                  thValor.classList.add('toRight');
               var th2  = document.createElement('th');
                   th2.innerText = 'Total';
                   th2.classList.add('toRight');
@@ -440,30 +327,38 @@
                   th4.innerText = 'Fecha';
 
               trTitulos.append(th1);
+              trTitulos.append(thValor);
               trTitulos.append(th2);
               trTitulos.append(th3);
               trTitulos.append(th4);
               tablaResultadoParaConsultor.append(trTitulos);
-              
+              var totalAcumulado = 0;
               dataRespuesta.forEach((registro) => {
                   var tr = document.createElement('tr');
                   var td  = document.createElement('td');
+                  var tdValor  = document.createElement('td');
                   var tdTotalImp  = document.createElement('td');
                   var tdTotal  = document.createElement('td');
                   var tdFecha  = document.createElement('td');
+
                       td.innerText = registro.ds_os+' '+registro.ds_caracteristica;
+                      tdValor.innerText = Number(registro.valor).toFixed(2);
+                      totalAcumulado = (Number(totalAcumulado) + Number(registro.valor)).toFixed(2);
+                      tdValor.classList.add('toRight');
                       tdFecha.innerText = registro.dt_inicio;
                       tdTotalImp.innerText = registro.total_imp_inc+'%';
                       tdTotalImp.classList.add('toRight');
                       tdTotal.innerText = Number(registro.total).toFixed(2);
                       tdTotal.classList.add('toRight');
                       tr.append(td);
+                      tr.append(tdValor);
                       tr.append(tdTotal);
                       tr.append(tdTotalImp);
                       tr.append(tdFecha);
                   tablaResultadoParaConsultor.append(tr);
               });
-              
+
+              document.getElementById('totalAcumulado').innerText = 'R$ '+ totalAcumulado;
               loaderOff();
             });
 
@@ -475,5 +370,6 @@
   <div id="loader">
     <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div>
+  <script src="{{ asset('/js/funciones.js') }}"></script>
 </body>
 </html>

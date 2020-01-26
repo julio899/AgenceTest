@@ -2,8 +2,9 @@
 
 ## Test Agence in Laravel
 Requerimientos Base de Datos archivo `SQL Base`
-correr en terminal
+**correr en terminal**
 > composer install
+
 > php artisan migrate
 ## License
 

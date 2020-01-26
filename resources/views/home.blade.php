@@ -67,7 +67,7 @@
                     <i class="material-icons">store</i>
                   </div>
                   <p class="card-category">Acumulado</p>
-                  <h3 class="card-title">R$0,00</h3>
+                  <h3 id="totalAcumulado" class="card-title">R$0,00</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
