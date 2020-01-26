@@ -7,7 +7,7 @@ Requerimientos Base de Datos archivo `SQL Base`
 
 > php artisan migrate
 
-![peview](https://raw.githubusercontent.com/julio899/AgenceTest/master/public/img/peview.jpg)
+![peview](https://raw.githubusercontent.com/julio899/AgenceTest/master/public/img/peview.png)
 
 ## License
 
