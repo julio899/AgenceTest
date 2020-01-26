@@ -302,10 +302,19 @@
 
     function busquedaDataConsultor( userConsultor )
     {
+        const year = document.getElementById('year').value;
+        const month = document.getElementById('month').value;
+        
         const url_api_consultores_ganancias = "{{ url('/api/consultores/') }}/"+userConsultor+'/ganancia';
         const tablaResultadoParaConsultor = document.getElementById("tableDataConsultor");
 
-      fetch(url_api_consultores_ganancias)
+      var data = {fecha: year+'-'+month};
+      fetch(url_api_consultores_ganancias,
+            { 
+              method: 'POST',
+              body: JSON.stringify(data), 
+              headers:{'Content-Type': 'application/json'}
+            })
             .then((r) => { return r.json(); })
             .then( (dataRespuesta) => {
               console.log(dataRespuesta);

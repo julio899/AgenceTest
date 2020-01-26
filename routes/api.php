@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/consultores', 'Consultores@getConsultores')->name('consultores');
-Route::get('/consultores/{consultor}/ganancia', 'Consultores@getGanancias')->name('gananciasNetasConsultores');
+Route::post('/consultores/{consultor}/ganancia', 'Consultores@getGanancias')->name('gananciasNetasConsultores');

@@ -1,3 +1,18 @@
+span.lbl-select {
+  padding-left: 1em!important;
+  font-size: 1.5em;
+}
+.selector{
+  min-width: 100px;
+  font-size: 1.8em;
+  text-align: center!important;
+  border-radius: 7px;
+  background-color: rgb(183, 102, 198);
+  border: none;
+  color: #FFF;
+  font-weight: bold;
+}
+
 .tim-typo {
   padding-left: 25%;
   margin-bottom: 40px;

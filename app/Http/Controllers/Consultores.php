@@ -31,8 +31,13 @@ class Consultores extends Controller
         return $cao_usuarios;
     }
 
-    public function getGanancias($userConsultor)
+    public function getGanancias(Request $request,$userConsultor)
     {
+        // validamos para ver si llego la fecha vacia 
+        $yymm = ($request->get('fecha')=='-') ? '' : $request->get('fecha');
+        // En caso que reciba solo el dia
+        $yymm = (substr($yymm,0,1) == '-' ) ? '%'.$yymm : $yymm;
+        
         # Nota Importante en el PDF dice -> en una determinada fecha (DATA_EMISSAO).
         // PERO DATA_EMISSAO en las tablas que me pasaron NO EXISTE
         $facturasGananciasNetas = DB::select(
@@ -40,6 +45,7 @@ class Consultores extends Controller
             FROM `cao_os`as os ,cao_fatura as fac 
             WHERE os.co_usuario LIKE '$userConsultor'
             AND fac.co_os LIKE os.co_os
+            AND `os`.`dt_inicio` LIKE '$yymm%'
             ORDER BY `os`.`dt_inicio` DESC"
         );
         return $facturasGananciasNetas;

@@ -91,7 +91,7 @@
             <div class="card">
                 <div class="card-header card-header-warning">
                   <h4 class="card-title">Cuentas de Consultores</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
+                  <!-- <p class="card-category">New employees on 15th September, 2016</p> -->
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -160,6 +160,28 @@
                              Reporte de Facturas Relacionadas a <strong id="consultorLabel"></strong>
                             <div class="ripple-container"></div>
                           </a>
+                        </li>
+                          <span class="nav-tabs-title lbl-select">A&ntilde;o</span>
+                          <select class="selector" name="year" id="year">
+                            <option value="">Todos</option>
+                            @for ($x=2000; $x < 2020;$x++)
+                              <option value="{{ $x }}">{{ $x }}</option>
+                            @endfor
+                          </select>
+                        <li>
+                        </li>
+                          <span class="nav-tabs-title lbl-select">Mes</span>
+                          <select class="selector" name="month" id="month">
+                            <option value="">Todos</option>
+                            @for ($x=1; $x < 13;$x++)
+                              @if ($x > 9)
+                              <option value="{{ $x }}">{{ $x }}</option>
+                              @else
+                                <option value="0{{ $x }}">0{{ $x }}</option>                              
+                              @endif
+                            @endfor
+                          </select>
+                        <li>
                         </li>
                       </ul>
                     </div>
