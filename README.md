@@ -13,6 +13,9 @@ Requerimientos Base de Datos archivo `SQL Base`
 > php artisan migrate:fresh --seed
         - Otra forma para correr sin confirmar
         `heroku run /app/php/bin/php /app/www/artisan migrate:fresh --seed`
+        - Entrada a **bash** en heroku
+        `heroku run bash`
+
 
 #### Actualizando contenedor
 > heroku run "php artisan migrate:fresh --seed"
