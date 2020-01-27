@@ -372,6 +372,7 @@
                       tdTotal.classList.add('toRight');
                       
                       //(VALOR – (VALOR*TOTAL_IMP_INC))*COMISSAO_
+                      // La formula provista tenia un pelon xD
                       // BASE   -> 6925/1.27
                       // add %  -> 6925*1.10
 
