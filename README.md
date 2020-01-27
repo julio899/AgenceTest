@@ -15,6 +15,7 @@ Requerimientos Base de Datos archivo `SQL Base`
         `heroku run /app/php/bin/php /app/www/artisan migrate:fresh --seed`
         - Entrada a **bash** en heroku
         `heroku run bash`
+        `git push heroku master`
 
 
 #### Actualizando contenedor
@@ -22,7 +23,9 @@ Requerimientos Base de Datos archivo `SQL Base`
 
 ![peview0](https://raw.githubusercontent.com/julio899/AgenceTest/master/public/img/preview0.png)
 
-![peview](https://raw.githubusercontent.com/julio899/AgenceTest/master/public/img/peview.png)
+![peview](https://raw.githubusercontent.com/julio899/AgenceTest/master/public/img/preview.png)
+
+![phpunit](https://raw.githubusercontent.com/julio899/AgenceTest/master/public/img/test.png)
 
 ## License
 
