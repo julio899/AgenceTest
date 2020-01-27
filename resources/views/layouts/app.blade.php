@@ -331,7 +331,9 @@
                   th1.innerText = 'Descripcion';
               var thValor  = document.createElement('th');
                   thValor.innerText = 'Valor';
-                  thValor.classList.add('toRight');
+              var thComi  = document.createElement('th');
+                  thComi.innerText = 'Comision';
+                  thComi.classList.add('toRight');
               var th2  = document.createElement('th');
                   th2.innerText = 'Total';
                   th2.classList.add('toRight');
@@ -343,15 +345,18 @@
 
               trTitulos.append(th1);
               trTitulos.append(thValor);
+              trTitulos.append(thComi);
               trTitulos.append(th2);
               trTitulos.append(th3);
               trTitulos.append(th4);
               tablaResultadoParaConsultor.append(trTitulos);
               var totalAcumulado = 0;
+              var totalAcumuladoComision = 0;
               dataRespuesta.forEach((registro) => {
                   var tr = document.createElement('tr');
                   var td  = document.createElement('td');
                   var tdValor  = document.createElement('td');
+                  var tdComi  = document.createElement('td');
                   var tdTotalImp  = document.createElement('td');
                   var tdTotal  = document.createElement('td');
                   var tdFecha  = document.createElement('td');
@@ -365,15 +370,36 @@
                       tdTotalImp.classList.add('toRight');
                       tdTotal.innerText = Number(registro.total).toFixed(2);
                       tdTotal.classList.add('toRight');
+                      
+                      //(VALOR – (VALOR*TOTAL_IMP_INC))*COMISSAO_
+                      // BASE   -> 6925/1.27
+                      // add %  -> 6925*1.10
+
+                      // 5040-(5370.27/1.27)
+                      // registro.valor - ( registro.total / (registro.total_imp_inc/100) ) 
+                      
+                      var comisionGanada = 0;
+                      if(registro.total_imp_inc>0)
+                      {
+                        comisionGanada = registro.valor - ( registro.total /( (registro.total_imp_inc/100) +1) ) ;
+                        console.log(registro.valor+' - ('+registro.total+'/(('+registro.total_imp_inc+'/100)+1)) = '+comisionGanada);
+                        totalAcumuladoComision = totalAcumuladoComision + Number(comisionGanada);
+                      }
+
+                      tdComi.innerText = Number(comisionGanada).toFixed(2);
+                      tdComi.classList.add('toRight');
+                      
                       tr.append(td);
                       tr.append(tdValor);
+                      tr.append(tdComi);
                       tr.append(tdTotal);
                       tr.append(tdTotalImp);
                       tr.append(tdFecha);
                   tablaResultadoParaConsultor.append(tr);
               });
-
-              document.getElementById('totalAcumulado').innerText = 'R$ '+ totalAcumulado;
+              totalAcumuladoComision = Number(totalAcumuladoComision).toFixed(2);
+              console.log('Acumilado Comision: '+totalAcumuladoComision);
+              document.getElementById('totalAcumulado').innerText = 'R$ '+ totalAcumuladoComision;
               loaderOff();
             });
 
