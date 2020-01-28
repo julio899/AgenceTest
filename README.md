@@ -11,9 +11,12 @@ Requerimientos Base de Datos archivo `SQL Base`
 
 #### Creacion de Estructuras para el Login
 > php artisan migrate:fresh --seed
+
         - Otra forma para correr sin confirmar
-        `heroku run /app/php/bin/php /app/www/artisan migrate:fresh --seed`
+        > `heroku run /app/php/bin/php /app/www/artisan migrate:fresh --seed`
+
         - Entrada a **bash** en heroku
+        
         `heroku run bash`
         `git push heroku master`
 
