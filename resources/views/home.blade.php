@@ -21,6 +21,11 @@
               <p>Tablero Principal</p>
             </a>
           </li>
+          <li>
+
+
+              <canvas id="chartTorta" width="250" height="250"></canvas>
+          </li>
         </ul>
       </div>
     </div>

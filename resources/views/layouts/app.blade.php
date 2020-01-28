@@ -61,12 +61,66 @@
   <script src="{{ asset('/js/material-dashboard.js?v=2.1.1') }}" type="text/javascript"></script>
   <!-- Material Dashboard inicio methods -->
   <script src="{{ asset('/js/inicio.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  
   <style>
 
   </style>
   <script>
     $(document).ready(function() {
       $().ready(function() {
+
+        const url_api_consultores_grafica = "{{ url('/api/consultores/graphi') }}";
+        // LLamada a endpoint para grafica de consultores
+        fetch( url_api_consultores_grafica  )
+            .then((r) => { return r.json(); })
+            .then( (dataRespuesta) => {
+                let dt = [];
+                let names = [];
+                let colors = [];
+                let sumatoria = 0;
+                dataRespuesta.map(( consultor )=>{
+                  dt.push(consultor.liquido);
+                  sumatoria+=Number(consultor.liquido);
+                  names.push(consultor.co_usuario);
+                  colors.push(random_rgba());                  
+                });
+
+                var namesArray = [];
+                var ctr = 0;
+                names.map(( txtName ) => {
+                  namesArray.push( txtName + ' ( '+ ((dt[ctr]*100)/sumatoria).toFixed(2) +'% ) ' );    
+                  ctr++;
+                });
+
+              /* Torta Chart */
+                        
+                var config = {
+                    type: 'pie',
+                    data: {
+                      datasets: [{
+                        data:dt,
+                        backgroundColor: colors,
+                        label: 'Dataset 1'
+                      }],
+                      labels: namesArray
+                    },
+                    options: {  
+                      title: {
+                          display: true,
+                          text: 'Ganancias Liquidas por Consultores'
+                      },
+                      responsive: true
+                    }
+                  };
+
+                var ctx = document.getElementById('chartTorta').getContext('2d');
+
+              var myPieChart = new Chart(ctx, config);
+              /* -- Cierre de Torta chart */
+            });
+
+
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -239,7 +293,6 @@
     $(document).ready(function() {
       // Javascript method's body can be found in public/js/inicio.js
       md.initDashboardPageCharts();
-
     });
 
     (async function(){

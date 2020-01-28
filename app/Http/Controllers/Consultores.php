@@ -31,6 +31,32 @@ class Consultores extends Controller
         return $cao_usuarios;
     }
 
+    public function getGananciasGraphi(Request $request)
+    {
+       $consultores = $this->getConsultores($request);
+       $request['fecha']='-';
+       $dataConsultoresFull = [ ];
+       foreach($consultores as $consultor)
+       {
+            $consultor->data = $this->getGanancias($request,$consultor->co_usuario);
+            $liquido = 0;
+            foreach( $consultor->data as $fac)
+            {
+                /* 
+                    sólo se debe considerar el valor líquido de la factura (valor da factura (VALOR)) 
+                    y restarle el valor del campo total de impuestos (TOTAL_IMP_INC), que es un porcentaje 
+                */
+                $resultado = ( $fac->valor - ( $fac->total/(( $fac->total_imp_inc/100)+1) ) );
+                $liquido = $liquido + $resultado; 
+            }
+            
+            $consultor->liquido = number_format($liquido,2,'.',''); // Formateando a 2 decimales
+            unset( $consultor->data ); // quitando matriz de invoices
+            array_push($dataConsultoresFull,$consultor);
+       }
+       return $dataConsultoresFull;
+    }
+
     public function getGanancias(Request $request,$userConsultor)
     {
         // validamos para ver si llego la fecha vacia 
